@@ -1,0 +1,31 @@
+.chat
+  .chat__right-header
+    .chat__right-header__group
+      Group
+      %ul.chat__right-header__group__list
+        Member:
+        %li.list-member
+          name
+    .chat__right-header__edit-btn
+      =link_to "#" do
+        Edit
+  .chat__message-content
+    .chat__message-content__field
+      .chat__message-content__field__box
+        .chat__message-content__field__box__name
+          Name
+        .chat__message-content__field__box__date
+          2020年07月05日14時40分
+      %p.chat__message-content__field__list
+        enjoy
+
+  .chat__form
+    .chat__form__box
+      %form.chat__form__box__content
+        %input{placeholder: "type a message", type: "text", class: "message"}
+        %label{class: "image"}
+          = icon('far','image')
+          %input{type: "file", class: "file"}
+      %form.chat__form__box__submit
+        %input{value: "Send", type: "submit", class: "submit"}
+        
