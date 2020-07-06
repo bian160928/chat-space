@@ -1,0 +1,20 @@
+.AccountPage
+  .AccountPage__title
+    %h2 Log in
+    %h5 登録しているユーザーでログイン
+    = render "devise/shared/links"
+  .AccountPage__form
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .FormField
+        .FormField__label--normal
+          = f.label :email
+        .FormField__input--normal
+          = f.email_field :email, autofocus: true
+        .FormField
+          .FormField__label--normal
+            = f.label :password
+            %i (英数字8文字以上)
+          .FormField__input--normal
+            = f.password_field :password, autocomplete: "off"
+        .actions
+          = f.submit "Log in", class: 'Button UserButton'

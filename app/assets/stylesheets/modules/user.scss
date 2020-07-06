@@ -1,0 +1,121 @@
+.AccountPage {
+  width: 980px;
+  margin: 60px auto;
+  padding: 60px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.AccountPage__title {
+  width: 50%;
+  font-size: 14px;
+  font-weight: 200;
+
+  h2 {
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-size: 40px;
+    &:after {
+      content: "";
+      display: block;
+      width: 60px;
+      margin-top: 5px;
+      border-bottom: 1px solid #38aef0;
+    }
+  }
+
+  .Button {
+    margin-top: 40px;
+    color: #fff;
+    background-color: #ccc;
+  }
+}
+
+.AccountPage__form {
+  width: 50%;
+}
+
+.FormField {
+  margin-bottom: 10px;
+  &__label--normal {
+    padding: 10px 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 200;
+    i {
+      font-size: 11px;
+    }
+    .field_with_errors {
+      display: inline-block;
+      color: #d65f4c;
+      font-weight: 400;
+    }
+  }
+  &__input--normal {
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      letter-spacing: 1px;
+    }
+    .field_with_errors {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d65f4c;
+      }
+    }
+  }
+}
+
+.Button {
+  display: inline-block;
+  height: 50px;
+  padding: 0 30px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.UserButton {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #38aef0;
+}
+
+#error_explanation {
+  margin: 20px 0;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+
+  h2 {
+    margin-bottom: 10px;
+    color: #d65f4c;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 17px;
+    list-style: square;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+}
