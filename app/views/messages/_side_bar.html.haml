@@ -5,16 +5,15 @@
         = current_user.name
       %ul.side-bar__user-name__top-items__icon
         %li.icon-left
-          = link_to "#" do
+          = link_to new_group_path(current_user) do
             %i.fas.fa-edit
         %li.icon-right
           = link_to edit_user_path(current_user) do
             %i.fas.fa-cog
   .side-bar__group
-    .side-bar__group__place
-      .side-bar__group__place-name
-        = link_to"#" do
-          Group name
-      .side-bar__group__place-message
-        = link_to"#"  do
-          No Message
+    - current_user.groups.each do |group|
+      .side-bar__group__place
+        = link_to edit_group_path(current_user) do
+          .side-bar__group__place-name
+            = group.name
+          .side-bar__group__place-message

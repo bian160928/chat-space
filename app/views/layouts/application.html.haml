@@ -17,6 +17,8 @@
     %title ChatSpace
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
     = render 'layouts/notifications'
     = yield
