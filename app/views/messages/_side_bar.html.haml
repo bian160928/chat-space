@@ -13,7 +13,8 @@
   .side-bar__group
     - current_user.groups.each do |group|
       .side-bar__group__place
-        = link_to edit_group_path(current_user) do
+        = link_to group_messages_path(group) do
           .side-bar__group__place-name
             = group.name
           .side-bar__group__place-message
+            = group.show_last_message

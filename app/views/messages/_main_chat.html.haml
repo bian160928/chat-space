@@ -1,31 +1,25 @@
 .chat
   .chat__right-header
     .chat__right-header__group
-      Group
+      = @group.name
       %ul.chat__right-header__group__list
         Member:
         %li.list-member
-          name
+          - @users.each do |user|
+            = user.name
     .chat__right-header__edit-btn
-      =link_to edit_group_path(current_user) do
+      =link_to edit_group_path(@group) do
         Edit
   .chat__message-content
-    .chat__message-content__field
-      .chat__message-content__field__box
-        .chat__message-content__field__box__name
-          Name
-        .chat__message-content__field__box__date
-          2020年07月05日14時40分
-      %p.chat__message-content__field__list
-        enjoy
+    = render @messages
+   
 
   .chat__form
-    .chat__form__box
-      %form.chat__form__box__content
-        %input{placeholder: "type a message", type: "text", class: "message"}
-        %label{class: "image"}
-          = icon('far','image')
-          %input{type: "file", class: "file"}
-      %form.chat__form__box__submit
-        %input{value: "Send", type: "submit", class: "submit"}
-        
+    = form_with model: [@group, @message],  html: {class: "Form"},local: true do |f|
+      .chat__form__box
+        = f.text_field :content, class: 'message', placeholder: 'type a message'
+        = f.label :image, class: 'image' do
+          = icon('far','image', class: 'image')
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'submit'
+
