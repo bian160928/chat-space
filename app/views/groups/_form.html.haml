@@ -15,9 +15,25 @@
       %label.SettingGroupForm__label チャットメンバーを追加
     .SettingGroupForm__rightField
       / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      = f.collection_check_boxes :user_ids, User.all, :id, :name
+      = f.text_field current_user.name, class: 'SettingGroupForm__input', placeholder: '追加したいユーザー名を入力してください'
+  .SettingGroupForm__field
+    .SettingGroupForm__leftField
+      %label.SettingGroupForm__label チャットメンバー
+    .SettingGroupForm__rightField
+      .ChatMembers
+        .chat-group-user
+          .ChatMember
+            = current_user.name
+            
+          
+            
+      
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
   .SettingGroupForm__field
     .SettingGroupForm__leftField
     .SettingGroupForm__rightField
       = f.submit class: 'SettingGroupForm__button'
+
+
+
+      -# f.collection_check_boxes :user_ids, User.all, :id, :name

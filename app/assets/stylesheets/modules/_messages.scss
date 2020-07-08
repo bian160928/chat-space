@@ -100,22 +100,22 @@
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 40px 0;
-    &__field{
+    .field{
       margin-bottom: 46px;
-      &__box {
+      .box {
         display: flex;
-        &__name {
+        .name {
           color: #434a54;
           font-size: 16px;
           font-weight: bold;
         }
-        &__date {
+        .date {
           color: #999;
           font-size: 12px;
           padding-left: 10px;
         }
       }
-      &__list {
+      .list {
         margin-top: 12px;
         color: #434a54;
         font-size: 14px;
@@ -130,40 +130,40 @@
     &__box {
       display: flex;
       justify-content: space-between;
-      &__content {
-        width: 100%;
-        background-color: #fff;
-        position: relative;
+      width: 100%;
+      background-color: #fff;
+      position: relative;
         .message {
           border: none;
           height: 50px;
           width: 100%;
           padding: 0 45px 0 15px;
         }
-        .image {
-          height: 50px;
-          position: absolute;
-          right: 10px;
-          line-height: 50px;
-          font-size: 25px;
-          color: black;
-        }
-        .file {
-          display: none;
-        }
-      }
-      .submit {
-        background-color: #38AEF0;
-        border: none;
-        color: #fff;
-        font-size: 16px;
+      .image {
         height: 50px;
-        margin-left: 15px;
-        padding: 0 30px;
+        position: absolute;
+        right: 10px;
+        line-height: 50px;
+        font-size: 25px;
+        color: black;
+      }
+      .file {
+        display: none;
       }
     }
   }
 }
+.Form {
+  display: flex;
+}
 
 
-
+.submit {
+  background-color: #38AEF0;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 30px;
+}

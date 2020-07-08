@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  def  edit
+  def edit
     @group = Group.find(params[:id])
   end
 
@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
       render :edit
     end
   end
-
+  
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
