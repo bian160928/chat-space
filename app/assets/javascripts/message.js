@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    console.log(message)
     if ( message.image ) {
       let html =
         `<div class="field">
