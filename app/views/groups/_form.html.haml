@@ -14,26 +14,25 @@
     .SettingGroupForm__leftField
       %label.SettingGroupForm__label チャットメンバーを追加
     .SettingGroupForm__rightField
-      / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      = f.text_field current_user.name, class: 'SettingGroupForm__input', placeholder: '追加したいユーザー名を入力してください'
+      .UserSearch
+        %input#UserSearch__field.SettingGroupForm__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}/
+      #UserSearchResult
   .SettingGroupForm__field
     .SettingGroupForm__leftField
-      %label.SettingGroupForm__label チャットメンバー
+      = f.label :name, value: "チャットメンバー", class: "SettingGroupForm__label"
     .SettingGroupForm__rightField
       .ChatMembers
-        .chat-group-user
-          .ChatMember
-            = current_user.name
-            
-          
-            
-      
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+        .ChatMember
+          %p.ChatMember__name= current_user.name
+          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+        - group.users.each do |user|
+          - if current_user.name != user.name
+            .ChatMember
+              %p.ChatMember__name 
+                = user.name
+              .ChatMember__remove.ChatMember__button{"data-user-id": user.id, "data-user-name": user.name} 削除
+              %input{name: "group[user_ids][]", type:"hidden", value: user.id}
   .SettingGroupForm__field
     .SettingGroupForm__leftField
     .SettingGroupForm__rightField
       = f.submit class: 'SettingGroupForm__button'
-
-
-
-      -# f.collection_check_boxes :user_ids, User.all, :id, :name
